@@ -116,42 +116,71 @@ export default function PremiumNavbar() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        {menuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="md:hidden bg-gradient-to-b from-purple-900 via-indigo-900 to-black backdrop-blur-md shadow-2xl"
-          >
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="block text-white px-6 py-3 hover:bg-yellow-100 transition"
-              >
-                {link.name}
-              </a>
-            ))}
-            <div className="flex gap-2 px-6 py-3 bg-yellow-100 rounded-full mt-2 mb-4 w-fit">
-              <button
-                onClick={() => setLang("hi")}
-                className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
-                  lang === "hi" ? "bg-orange-600 text-white" : "text-black"
-                }`}
-              >
-                हिंदी
-              </button>
-              <button
-                onClick={() => setLang("en")}
-                className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
-                  lang === "en" ? "bg-orange-600 text-white" : "text-black"
-                }`}
-              >
-                English
-              </button>
-            </div>
-          </motion.div>
-        )}
+
+{/* Mobile Menu */}
+{menuOpen && (
+  <motion.div
+    initial={{ opacity: 0, x: -40 }}
+    animate={{ opacity: 1, x: 0 }}
+    className="md:hidden fixed top-24 left-0 w-3/4 h-screen 
+               bg-gradient-to-b from-yellow-50 via-orange-100 to-white 
+               shadow-2xl backdrop-blur-md rounded-r-2xl overflow-y-auto"
+  >
+    <div className="py-6">
+      {navLinks.map((link) => (
+        <a
+          key={link.name}
+          href={link.href}
+          className="block px-6 py-4 text-lg font-semibold 
+                     text-gray-900 hover:text-orange-600 
+                     hover:bg-yellow-200/50 rounded-md transition-all"
+        >
+          {link.name}
+        </a>
+      ))}
+
+      {/* Language Toggle */}
+      <div className="flex gap-2 px-6 py-4 mt-4 bg-gradient-to-r from-yellow-200 to-orange-200 rounded-full w-fit mx-6 shadow-inner">
+        <button
+          onClick={() => setLang("hi")}
+          className={`px-4 py-1 rounded-full font-medium text-sm transition ${
+            lang === "hi"
+              ? "bg-orange-600 text-white shadow-md"
+              : "text-black hover:bg-yellow-300"
+          }`}
+        >
+          हिंदी
+        </button>
+        <button
+          onClick={() => setLang("en")}
+          className={`px-4 py-1 rounded-full font-medium text-sm transition ${
+            lang === "en"
+              ? "bg-orange-600 text-white shadow-md"
+              : "text-black hover:bg-yellow-300"
+          }`}
+        >
+          English
+        </button>
+      </div>
+
+      {/* CTA */}
+      <motion.a
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        href="#hero"
+        className="block mt-6 mx-6 px-6 py-3 text-center 
+                   bg-gradient-to-r from-orange-500 to-yellow-400 
+                   text-white font-semibold rounded-xl shadow-xl 
+                   hover:from-yellow-400 hover:to-orange-500 transition"
+      >
+        Get My Kundli
+      </motion.a>
+    </div>
+  </motion.div>
+)}
+
+
+
       </div>
     </nav>
   );
