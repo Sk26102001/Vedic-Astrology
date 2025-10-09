@@ -1,27 +1,3 @@
-// import { motion } from "framer-motion";
-
-// export default function Pricing() {
-//   return (
-
-
-//     <section className="bg-gradient-to-r from-yellow-50 via-orange-100 to-yellow-50 py-16">
-//   <div className="max-w-4xl mx-auto text-center">
-//     <h2 className="text-3xl font-bold text-gray-900 mb-4">Your Vedic Personalized Kundli Report</h2>
-//     <p className="text-gray-600 mb-8">Limited Time Offer – Get accurate life guidance at a fraction of the price.</p>
-    
-//     <div className="bg-white shadow-xl rounded-2xl p-8 max-w-md mx-auto border border-yellow-300">
-//       <p className="text-xl text-gray-800 mb-2 line-through">₹1999 / $25</p>
-//       <p className="text-4xl font-bold text-orange-600 mb-4">₹999 / $15</p>
-//       <p className="text-gray-500 mb-6">One-time payment. Lifetime access to your personalized report.</p>
-//       <button className="px-8 py-3 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-semibold shadow-md">
-//         Get My Kundli Now
-//       </button>
-//     </div>
-//   </div>
-// </section>
-
-//   );
-// }
 
 
 import { motion } from "framer-motion";
